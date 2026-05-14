@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+  <title>TANE Konsumidores</title>
+  {% if use_vite_dev %}
+    <script type="module" src="{{ vite_url }}/@vite/client"></script>
+  {% elif main_css %}
+    {% for css_file in main_css %}
+      <link rel="stylesheet" href="{% static css_file %}" />
+    {% endfor %}
+  {% endif %}
+</head>
+<body>
+  <div id="root"></div>
+  {% if use_vite_dev %}
+    <script type="module" src="{{ vite_url }}/src/main.jsx"></script>
+  {% elif main_js %}
+    <script type="module" src="{% static main_js %}"></script>
+  {% else %}
+    <p style="font-family: Arial, Helvetica, sans-serif; padding: 16px;">
+      Frontend build files not found. Run <strong>npm run build</strong> inside <strong>frontend</strong>
+      or start Vite with <strong>npm run dev</strong>.
+    </p>
+  {% endif %}
+</body>
+</html>
