@@ -5,6 +5,7 @@ import { resolveMediaSrc } from '../../../utils/media'
 import { optimizeImageForUpload } from '../../../utils/imageOptimization'
 import useUnsavedForm from '../../../hooks/useUnsavedForm'
 import AdminUnsavedNotice from '../../../components/admin/AdminUnsavedNotice'
+import { getAssetPath } from '../../../utils/assetPaths'
 import { useAdminAuth } from '../../../context/AdminAuthContext'
 import {
   Save,
@@ -43,7 +44,7 @@ const EMPTY_FORM = {
   tag_ids: [],
 }
 
-const PLACEHOLDER_THUMB = '/logo.png'
+const PLACEHOLDER_THUMB = getAssetPath('logo.png')
 
 function Toggle({ checked, onChange, label, hint }) {
   return (
@@ -545,7 +546,7 @@ export default function NoticiaEditPage() {
                   </div>
                   {thumbnailPreview && !thumbnailLoadError && (
                   <div
-                    className={`adm-thumb-preview${thumbnailPreview.includes('/logo.png') ? ' adm-thumb-preview--placeholder' : ''}`}
+                    className={`adm-thumb-preview${thumbnailPreview.includes('logo.png') ? ' adm-thumb-preview--placeholder' : ''}`}
                     role="button"
                     tabIndex={0}
                     onClick={openPreviewModal}

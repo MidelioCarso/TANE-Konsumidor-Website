@@ -330,7 +330,7 @@ export default function NoticiasPage() {
                             objectFit: 'cover',
                             flexShrink: 0,
                             cursor: 'zoom-in',
-                            background: item.thumbnail_url && item.thumbnail_url.includes('/logo.png') ? '#000' : undefined,
+                            background: item.thumbnail_url && item.thumbnail_url.includes('logo.png') ? '#000' : undefined,
                           }}
                           onClick={() => setPreviewModalSrc(resolveMediaSrc(item.thumbnail_url) || FALLBACK_THUMB)}
                           onKeyDown={(e) => {

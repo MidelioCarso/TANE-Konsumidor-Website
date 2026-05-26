@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { BookOpen, LayoutList, Landmark, Menu, X } from 'lucide-react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { getAssetPath } from '../../utils/assetPaths'
 
 const ABOUT_LINKS = [
   { to: '/about/perfil',   Icon: Landmark,   label: 'Perfil TANE' },
@@ -107,7 +108,7 @@ function Navbar() {
     <header className={`navbar${mobileMenuOpen ? ' navbar-mobile-open' : ''}`} ref={navRootRef}>
       <div className="container navbar-inner">
         <NavLink to="/home" className="brand">
-          <img src="/logo_nav_2.png" alt="TANE Konsumidor" className="brand-logo" />
+          <img src={getAssetPath('logo_nav_2.png')} alt="TANE Konsumidor" className="brand-logo" />
         </NavLink>
 
         <button

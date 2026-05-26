@@ -25,13 +25,13 @@ def _get_manifest_assets():
 	except (json.JSONDecodeError, OSError):
 		return None, []
 
-	main_entry = manifest_data.get("src/main.jsx", {})
+	main_entry = manifest_data.get("src/main.jsx") or manifest_data.get("index.html", {})
 	main_js = main_entry.get("file")
 	main_css = main_entry.get("css", [])
 	return main_js, main_css
 
 
-def react_home(request):
+def react_home(request, *args, **kwargs):
 	vite_url = getattr(settings, "VITE_DEV_SERVER_URL", "http://127.0.0.1:5173")
 	vite_mode = getattr(settings, "VITE_DEV_MODE", settings.DEBUG)
 	use_vite_dev = vite_mode and _vite_server_is_running(vite_url)

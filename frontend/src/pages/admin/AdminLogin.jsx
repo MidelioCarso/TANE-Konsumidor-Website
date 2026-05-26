@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { ShieldCheck, AlertCircle, Eye, EyeOff } from 'lucide-react'
 import { useAdminAuth } from '../../context/AdminAuthContext'
 import '../../admin.css'
+import { getAssetPath } from '../../utils/assetPaths'
 
 export default function AdminLogin() {
   const { login, user, loading: authLoading } = useAdminAuth()
@@ -48,7 +49,7 @@ export default function AdminLogin() {
       <div className="adm-login-card">
         {/* Brand */}
         <div className="adm-login-brand">
-          <img src="/logo_nav.png" alt="TANE Konsumidor" />
+          <img src={getAssetPath('logo_nav.png')} alt="TANE Konsumidor" />
           <h1>Admin Portal</h1>
           <p>TANE Konsumidor — Painel Administrativu</p>
         </div>

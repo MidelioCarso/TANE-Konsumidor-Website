@@ -19,6 +19,7 @@ import {
   X,
 } from 'lucide-react'
 import { useAdminAuth } from '../../context/AdminAuthContext'
+import { getAssetPath } from '../../utils/assetPaths'
 import '../../admin.css'
 
 function SidebarNavItem({ to, label, Icon, end, onNavigate, badge }) {
@@ -281,7 +282,7 @@ export default function AdminLayout() {
             className="adm-sidebar-brand-link"
             onClick={closeMobileNav}
           >
-            <img src="/logo.png" alt="TANE" />
+            <img src={getAssetPath('logo.png')} alt="TANE" />
             <div className="adm-sidebar-brand-text">
               <span className="adm-sidebar-brand-title">TANE Admin</span>
               <span className="adm-sidebar-brand-sub">Control Panel</span>

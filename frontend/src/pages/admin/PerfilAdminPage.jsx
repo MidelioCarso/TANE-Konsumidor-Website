@@ -5,6 +5,7 @@ import { resolveMediaSrc } from '../../utils/media'
 import { optimizeImageForUpload } from '../../utils/imageOptimization'
 import useUnsavedForm from '../../hooks/useUnsavedForm'
 import AdminUnsavedNotice from '../../components/admin/AdminUnsavedNotice'
+import { getAssetPath } from '../../utils/assetPaths'
 
 const EMPTY = {
   organization_name: '',
@@ -411,7 +412,7 @@ export default function PerfilAdminPage() {
                       <img src={homeHeroPreview} alt="Home hero preview" />
                     ) : (
                       <div className="adm-hero-preview-empty">
-                        <img src="/logo.png" alt="TANE" />
+                        <img src={getAssetPath('logo.png')} alt="TANE" />
                         <span>Imajen padraun sei uza</span>
                       </div>
                     )}
@@ -446,7 +447,7 @@ export default function PerfilAdminPage() {
                       <img src={perfilHeroPreview} alt="Perfil hero preview" />
                     ) : (
                       <div className="adm-hero-preview-empty">
-                        <img src="/logo.png" alt="TANE" />
+                        <img src={getAssetPath('logo.png')} alt="TANE" />
                         <span>Imajen padraun sei uza</span>
                       </div>
                     )}
@@ -482,7 +483,7 @@ export default function PerfilAdminPage() {
                       <img src={historiaHeroPreview} alt="Historia hero preview" />
                     ) : (
                       <div className="adm-hero-preview-empty">
-                        <img src="/logo.png" alt="TANE" />
+                        <img src={getAssetPath('logo.png')} alt="TANE" />
                         <span>Imajen padraun sei uza</span>
                       </div>
                     )}
@@ -518,7 +519,7 @@ export default function PerfilAdminPage() {
                       <img src={planuHeroPreview} alt="Planu hero preview" />
                     ) : (
                       <div className="adm-hero-preview-empty">
-                        <img src="/logo.png" alt="TANE" />
+                        <img src={getAssetPath('logo.png')} alt="TANE" />
                         <span>Imajen padraun sei uza</span>
                       </div>
                     )}
@@ -554,7 +555,7 @@ export default function PerfilAdminPage() {
                       <img src={publicationHeroPreview} alt="Publication hero preview" />
                     ) : (
                       <div className="adm-hero-preview-empty">
-                        <img src="/logo.png" alt="TANE" />
+                        <img src={getAssetPath('logo.png')} alt="TANE" />
                         <span>Imajen padraun sei uza</span>
                       </div>
                     )}
